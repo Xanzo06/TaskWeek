@@ -11,12 +11,12 @@ public class Task6 {
         while (i < 10) {
             i++;
             System.out.println(n * i);
-
-        }
-
+            scanner.close();
         }
 
     }
+
+}
 
 
 

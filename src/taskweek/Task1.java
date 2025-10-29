@@ -8,6 +8,7 @@ public class Task1 {
         System.out.println("Как твоё имя ?");
         String name = scanner.nextLine();
         System.out.println("Привет, " + name + "!\nДобро пожаловать в Java!");
+        scanner.close();
 
     }
 }

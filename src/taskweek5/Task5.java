@@ -12,5 +12,6 @@ public class Task5 {
             count = i;
         }
         System.out.println("Количество букв в слове: " + word + ": " + count);
+        scanner.close();
     }
 }

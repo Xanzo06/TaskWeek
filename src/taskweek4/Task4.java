@@ -13,6 +13,7 @@ public class Task4 {
         double rub = dollar * rubToUsd;
 
         System.out.println("Сумма в рублях: " + rub );
+        scanner.close();
 
     }
 }

@@ -19,6 +19,7 @@ public class Task2 {
         System.out.println("Разность чисел: " + min);
         System.out.println("Произведение чисел: " + mul);
         System.out.println("Частное чисел: " + dif);
+        scanner.close();
 
     }
 }

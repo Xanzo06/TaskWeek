@@ -11,6 +11,7 @@ public class Task3 {
             System.out.println("Число чётное. ");
         }else {
             System.out.println("Число нечётное. ");
+            scanner.close();
         }
     }
 }
