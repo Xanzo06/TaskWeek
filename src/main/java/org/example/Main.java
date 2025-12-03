@@ -1,10 +1,20 @@
 package org.example;
 
-import taskweekchapter2.Invoice;
-import taskweekchapter2.Point;
-import taskweekchapter2.Point2;
-import taskweekchapter2.models.Teacher;
-import taskweekchapter2.math.utils.Calculator;
+import org.example.taskweekchapter3.IntSequence;
+import org.example.taskweekchapter3.IntSequenceUtils;
+import org.example.taskweekchapter3.ListUtils;
+import org.example.taskweekchapter3.RunUtil;
+import org.example.taskweekchapter3.DataAnalyzer;
+import org.example.taskweekchapter3.Measurable;
+import org.example.taskweekchapter3.Employee;
+import org.example.taskweekchapter2.Invoice;
+import org.example.taskweekchapter2.Point;
+import org.example.taskweekchapter2.Point2;
+import org.example.taskweekchapter2.math.utils.Calculator;
+import org.example.taskweekchapter2.models.Teacher;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,9 +49,57 @@ public class Main {
         invoice.addItem("Блокнот", 1, 100.0);
 
         invoice.printInvoice();
+
+        //Task1, Task2
+        Measurable[] employees = {
+                new Employee("Николай", 1000),
+                new Employee("Борис", 2000),
+                new Employee("Антон", 3000)
+        };
+
+        double avg = DataAnalyzer.average(employees);
+
+        Measurable largest = DataAnalyzer.largest(employees);
+
+        if (largest != null) {
+            Employee emp = (Employee) largest;
+            System.out.println("Сотрудник с самой высокой зарпалатой: " + emp.getName());
+        }
+
+        System.out.println("Средняя зарплата: " + avg);
+        System.out.println();
+
+        //Task3
+        IntSequence intSequence = IntSequenceUtils.of(1, 2, 6, 7, 8, 3);
+
+        while (intSequence.hasNext()) {
+            System.out.println(intSequence.next());
+        }
+        //Task5
+//        IntSequence infinity = IntSequenceUtils.constant(1);
+//        while (true){
+//            System.out.println(infinity.next());
+//        }
+        //Task7
+        ArrayList<String> list = new ArrayList<>(Arrays.asList("banana", "apple", "cherry", "lemon"));
+
+        System.out.println("До сортировки: " + list);
+
+        ListUtils.luckySort(list, String::compareTo);
+
+        System.out.println("После сортировки: " + list);
+        //13
+        Runnable task1 = () -> System.out.println("Task1");
+        Runnable task2 = () -> System.out.println("Task2");
+        Runnable task3 = () -> System.out.println("Task3");
+        Runnable task4 = () -> System.out.println("Task4");
+
+        Runnable comb = RunUtil.combine(task1, task2, task3, task4);
+
+        comb.run();
+
     }
-
-
 }
+
 
 
