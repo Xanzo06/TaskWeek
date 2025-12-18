@@ -77,7 +77,7 @@ public class Task1 {
 
         double value = sumOfValues(filename);
         if (Double.isNaN(value)){
-            System.out.println("Ошибка: не удалсть прочитать сумму");
+            System.out.println("Ошибка: не удалось прочитать сумму");
             return;
         }
         System.out.println("Сумма значений: "+ value);

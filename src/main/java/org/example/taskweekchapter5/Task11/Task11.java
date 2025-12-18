@@ -1,6 +1,5 @@
 package org.example.taskweekchapter5.Task11;
 
-import java.util.Objects;
 
 public class Task11 {
     public static void main(String[] args) {
